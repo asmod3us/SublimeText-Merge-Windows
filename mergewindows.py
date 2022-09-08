@@ -19,12 +19,12 @@ class mergewindows(sublime_plugin.WindowCommand):
                     newview = self.window.new_file()
                     newview.set_name(vname)
                     newview.set_syntax_file(oldview.settings().get('syntax'))
-                    newview.run_command('insert', {"characters": content})
+                    newview.run_command("insert_snippet", {"contents": "$VAR", "VAR": content})
 
                 if oldview.is_dirty() and fname is not None:
                     newview.run_command('select_all')
                     newview.run_command('left_delete')
-                    newview.run_command('insert', {"characters": content})
+                    newview.run_command("insert_snippet", {"contents": "$VAR", "VAR": content})
 
                 oldview.set_scratch(True)
                 oldview.close()
