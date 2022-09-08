@@ -2,7 +2,7 @@ import sublime
 import sublime_plugin
 
 
-class mergewindows(sublime_plugin.WindowCommand):
+class merge_windows(sublime_plugin.WindowCommand):
     def run(self):
         for wnd in sublime.windows():
             if wnd.window_id == self.window.window_id:
